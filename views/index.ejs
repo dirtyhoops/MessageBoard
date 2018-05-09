@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="messageform">
+            <form action="/message" method="post">
+                <div class="form-group">
+                    <label class="labelmessage">Name:</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="form-group"></div>
+                    <label class="labelmessage">Message:</label>
+                    <textarea class="form-control" class="form-control" rows="3" name="message"></textarea>
+                <button id="buttonmessage" class="btn btn-success">Post Message!</button>
+            </form>
+        </div>
+            <% for(let x of messages1) { %>
+               
+                <div class="messagediv"></div>
+                    <p class="pmessage">Name: <%= x.name %></p>
+                    <p class="pmessage">Message: <%= x.message%></>
+                    <div class="commentdiv">
+                       
+                        <% for(let y of x.comments) { %>
+                            <p class="pcomment">Name: <%= y.name %></p>
+                            <p class="pcomment">Comment: <%= y.comment %></p>
+                        <% } %>
+                        <form action="/comment/<%= x.id %>" method="post">
+                            <div class="form-group">
+                                <label class="labelcomment">Name:</label>
+                                <input type="text" name="name">
+                            </div>
+                            <div class="form-group"></div>
+                                <label class="labelcomment">Comment:</label>
+                                <textarea class="form-control" class="form-control" rows="2" name="comment"></textarea>
+                            <button id="buttoncomment" class="btn btn-success btn-sm">Post Comment!</button>
+                        </form>
+                    </div>
+                        
+    
+            <% } %>
+
+
+        
+            
+
+        </div>
+    </div>
+
+</body>
+</html>

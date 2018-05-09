@@ -1,0 +1,38 @@
+.messageform {
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+#buttonmessage, #buttoncomment {
+    margin-top: 5px;
+}
+
+.messagediv {
+    margin: 20x 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(212, 196, 196);
+}
+
+.commentdiv {
+    margin: 15px 30px 30px 30px;
+}
+
+.pmessage {
+    font-size: 17px;
+    margin-top: -15px;
+    font-weight: bold;
+}
+
+.pcomment {
+    font-size: 15px;
+    margin-top: -15px;
+}
+
+.labelmessage{
+    font-size: 17px;
+}
+
+.labelcomment{
+    font-size: 15px;
+}
