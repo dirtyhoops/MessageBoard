@@ -52,12 +52,9 @@ app.get('/', function(req, res) {
     Message.find({}, function(err, messages) {
         if(err) {
             console.log(err);
-        } else {
-            res.render('index', {messages1: messages});
-        }
+        } 
+        res.render('index', {messages1: messages});
     })
-
-    
 });
 
 app.post('/message', function(req, res){
@@ -70,8 +67,8 @@ app.post('/message', function(req, res){
         } else { 
             console.log('successfully added a new message');
         }
+        res.redirect('/');
     })
-    res.redirect('/');
 })
 
 app.post('/comment/:id', function(req, res){
@@ -87,10 +84,10 @@ app.post('/comment/:id', function(req, res){
                 } else {
                     console.log('successfully added a new comment');
                 }
-            })
+            })  
         }
+        res.redirect('/');
     })
-    res.redirect('/');
 })
 
 
